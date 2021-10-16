@@ -35,3 +35,13 @@ export const MenuGroup = styled.div`
     gap: ${theme.spacings.xsmall};
   `}
 `
+
+type MenuFullProps = {
+  isOpen: boolean
+}
+
+export const fullMenu = styled.nav<MenuFullProps>`
+  ${({ isOpen }) => css`
+    opacity: ${isOpen ? 1 : 0};
+  `}
+`
