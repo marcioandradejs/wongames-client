@@ -1,16 +1,16 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import MediaPatch from '.'
+import MediaMatch from '.'
 
 export default {
-  title: 'MediaPatch',
-  component: MediaPatch
+  title: 'MediaMatch',
+  component: MediaMatch
 } as Meta
 
 export const Desktop: Story = () => (
-  <MediaPatch greaterThan="medium">Only on Desktop</MediaPatch>
+  <MediaMatch greaterThan="medium">Only on Desktop</MediaMatch>
 )
 export const Mobile: Story = () => (
-  <MediaPatch lessThan="medium">Only on Mobile</MediaPatch>
+  <MediaMatch lessThan="medium">Only on Mobile</MediaMatch>
 )
 
 Mobile.parameters = {

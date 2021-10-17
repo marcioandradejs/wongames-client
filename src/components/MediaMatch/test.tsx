@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react'
 import 'jest-styled-components'
 
-import MediaPatch from '.'
+import MediaMatch from '.'
 
-describe('<MediaPatch />', () => {
+describe('<MediaMatch />', () => {
   let desktopHeading: Element
   let mobileHeading: Element
 
@@ -11,13 +11,13 @@ describe('<MediaPatch />', () => {
   beforeEach(() => {
     render(
       <>
-        <MediaPatch greaterThan="medium">
+        <MediaMatch greaterThan="medium">
           <h1 data-testid="desktop">Desktop</h1>
-        </MediaPatch>
+        </MediaMatch>
 
-        <MediaPatch lessThan="medium">
+        <MediaMatch lessThan="medium">
           <h1 data-testid="mobile">Mobile</h1>
-        </MediaPatch>
+        </MediaMatch>
       </>
     )
 
