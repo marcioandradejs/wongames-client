@@ -13,6 +13,7 @@ const WrapperModifiers = {
       text-align: right;
     }
   `,
+
   left: () => css`
     grid-template-areas: 'content floatimage';
     grid-template-columns: 2fr 1.3fr;
