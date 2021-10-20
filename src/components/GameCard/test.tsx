@@ -34,4 +34,16 @@ describe('<GameCard />', () => {
     // verificar se o FavButton foi renderizado
     expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
   })
+
+  it('should render price in label', () => {
+    // renderiza o component
+    // preço não tenha line-through
+    // preço tenha o background secundario
+  })
+
+  it('should render a line-through in price when promotional', () => {
+    // renderiza o component (Com promotionalPrice) // 22 reais // 15 reais
+    // preço tenha line-through (200)
+    // preço novo promocional não tenha o line-through (15)
+  })
 })
