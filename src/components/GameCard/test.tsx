@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react'
+import theme from 'styles/theme'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import GameCard from '.'
@@ -15,35 +16,39 @@ describe('<GameCard />', () => {
   it('should render correctly', () => {
     renderWithTheme(<GameCard {...props} />)
 
-    // verificar se o title foi renderizado
     expect(
       screen.getByRole('heading', { name: props.title })
     ).toBeInTheDocument()
 
-    // verificar se o developer foi renderizado
     expect(
       screen.getByRole('heading', { name: props.developer })
     ).toBeInTheDocument()
 
-    // verificar se o img foi renderizado
     expect(screen.getByRole('img', { name: props.title })).toHaveAttribute(
       'src',
       props.img
     )
 
-    // verificar se o FavButton foi renderizado
     expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
   })
 
   it('should render price in label', () => {
-    // renderiza o component
-    // preço não tenha line-through
-    // preço tenha o background secundario
+    renderWithTheme(<GameCard {...props} />)
+
+    const price = screen.getByText('R$ 235,00')
+
+    expect(price).not.toHaveStyle({ textDecoration: 'line-through' })
+    expect(price).toHaveStyle({ backgroundColor: theme.colors.secondary })
   })
 
   it('should render a line-through in price when promotional', () => {
-    // renderiza o component (Com promotionalPrice) // 22 reais // 15 reais
-    // preço tenha line-through (200)
-    // preço novo promocional não tenha o line-through (15)
+    renderWithTheme(<GameCard {...props} promotionalPrice="R$ 15,00" />)
+    expect(screen.getByText('R$ 235,00')).toHaveStyle({
+      textDecoration: 'line-through'
+    })
+
+    expect(screen.getByText('R$ 15,00')).not.toHaveStyle({
+      textDecoration: 'line-through'
+    })
   })
 })
