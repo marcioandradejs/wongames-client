@@ -11,6 +11,11 @@ export default {
     children: {
       type: 'string'
     }
+  },
+  parameters: {
+    backgrounds: {
+      default: 'won-light'
+    }
   }
 } as Meta
 
