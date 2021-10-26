@@ -34,7 +34,6 @@ export const Wrapper = styled.section<WrapperProps>`
     background-image: url(${backgroundImage});
     background-position: center center;
     background-size: cover;
-    width: 100%;
     height: 23rem;
     display: grid;
 
