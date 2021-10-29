@@ -88,7 +88,7 @@ exports[`<FormSignIn /> should render the form 1`] = `
 }
 
 .c0 .c7 {
-  margin: 3.2rem auto 1.6rem;
+  margin: 1.6rem auto 1.6rem;
 }
 
 .c9 {
