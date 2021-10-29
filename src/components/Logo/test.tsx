@@ -9,6 +9,12 @@ import Logo from '.'
 // expect - assertion - asserção - comparação - análise (Espero que renderize a logo branca)
 
 describe('<Logo />', () => {
+  it('should render the logo with id passed', () => {
+    const { container } = renderWithTheme(<Logo id="myId" />)
+
+    expect(container.querySelector('#paint_linear_myId')).toBeInTheDocument()
+  })
+
   it('should render a white label by default', () => {
     renderWithTheme(<Logo />)
     expect(screen.getByLabelText(/won games/i).parentElement).toHaveStyle({
