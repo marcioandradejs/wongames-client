@@ -1,8 +1,8 @@
 import Base from 'templates/Base'
 
-import { Container } from 'components/Container'
 import Heading from 'components/Heading'
 import Showcase from 'components/Showcase'
+import { Container } from 'components/Container'
 import { GameCardProps } from 'components/GameCard'
 import { HighlightProps } from 'components/Highlight'
 
