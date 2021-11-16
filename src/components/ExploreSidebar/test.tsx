@@ -98,6 +98,7 @@ describe('<ExploreSidebar />', () => {
 
     expect(onFilter).toBeCalledWith({ sort_by: 'high-to-low' })
   })
+
   it('should open/close sidebar when filtering on mobile ', () => {
     const { container } = renderWithTheme(
       <ExploreSidebar items={items} onFilter={jest.fn} />
