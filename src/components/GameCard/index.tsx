@@ -45,7 +45,7 @@ const GameCard = ({
     )}
     {price === 0 && (
       <Ribbon color="secondary" size={ribbonSize}>
-        FREE
+        Download now
       </Ribbon>
     )}
     <Link href={`game/${slug}`} passHref>
