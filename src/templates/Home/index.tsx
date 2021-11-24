@@ -62,8 +62,8 @@ const Home = ({
 
     <Showcase
       title={freeGamesTitle}
-      highlight={freeHighlight}
       games={freeGames}
+      highlight={freeHighlight}
     />
   </Base>
 )
