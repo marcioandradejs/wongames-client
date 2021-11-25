@@ -35,7 +35,7 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
         <ExploreSidebar items={filterItems} onFilter={handleFilter} />
 
         {loading ? (
-          <S.ShowMoreLoading src="/img/dots.svg" alt="Loading..." />
+          <p>Loading...</p>
         ) : (
           <section>
             <Grid>
