@@ -1,17 +1,19 @@
 import { useState } from 'react'
-import { useRouter } from 'next/router'
 import { signIn } from 'next-auth/client'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
+
 import { Email, Lock } from '@styled-icons/material-outlined'
 
 import Button from 'components/Button'
 import TextField from 'components/TextField'
-import { FormWrapper, FormLink } from 'components/Form'
+import { FormWrapper, FormLink, FormLoading } from 'components/Form'
 
 import * as S from './styles'
 
 const FormSignIn = () => {
   const [values, setValues] = useState({})
+  const [loading, setLoading] = useState(false)
   const { push } = useRouter()
 
   const handleInput = (field: string, value: string) => {
@@ -20,6 +22,7 @@ const FormSignIn = () => {
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
+    setLoading(true)
 
     // sign in
     const result = await signIn('credentials', {
@@ -31,6 +34,8 @@ const FormSignIn = () => {
     if (result?.url) {
       return push(result?.url)
     }
+
+    setLoading(false)
 
     // jogar o erro
     console.error('Email ou senha inválida')
@@ -55,8 +60,8 @@ const FormSignIn = () => {
         />
         <S.ForgotPassword href="#">Forgot your password?</S.ForgotPassword>
 
-        <Button type="submit" size="large" fullWidth>
-          Sign in now
+        <Button type="submit" size="large" fullWidth disabled={loading}>
+          {loading ? <FormLoading /> : <span>Sign in now</span>}
         </Button>
 
         <FormLink>
