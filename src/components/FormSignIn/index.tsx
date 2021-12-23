@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { signIn } from 'next-auth/client'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import { Email, Lock } from '@styled-icons/material-outlined'
 
+import { FormLink, FormWrapper, FormLoading } from 'components/Form'
 import Button from 'components/Button'
 import TextField from 'components/TextField'
-import { FormWrapper, FormLink, FormLoading } from 'components/Form'
 
 import * as S from './styles'
 
@@ -38,7 +38,7 @@ const FormSignIn = () => {
     setLoading(false)
 
     // jogar o erro
-    console.error('Email ou senha inválida')
+    console.error('email ou senha inválida')
   }
 
   return (
