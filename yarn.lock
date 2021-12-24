@@ -9804,7 +9804,7 @@ jest@^27.2.4:
     import-local "^3.0.2"
     jest-cli "^27.4.5"
 
-joi@^17.5.0:
+joi@^17.4.0:
   version "17.5.0"
   resolved "https://registry.yarnpkg.com/joi/-/joi-17.5.0.tgz#7e66d0004b5045d971cf416a55fb61d33ac6e011"
   integrity sha512-R7hR50COp7StzLnDi4ywOXHrBrgNXuUUfJWIR5lPY5Bm/pOD3jZaTwpluUXVLRWcoWZxkrHBBJ5hLxgnlehbdw==
