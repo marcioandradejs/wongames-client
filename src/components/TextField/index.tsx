@@ -18,9 +18,9 @@ const TextField = ({
   label,
   name,
   initialValue = '',
-  onInputChange,
   error,
   disabled = false,
+  onInputChange,
   ...props
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue)
