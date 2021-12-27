@@ -43,6 +43,7 @@ const FormSignIn = () => {
       ...values,
       redirect: false,
       callbackUrl: `${window.location.origin}${query?.callbackUrl || ''}`
+      // Rota do site padrão + a rota de callback
     })
 
     if (result?.url) {
