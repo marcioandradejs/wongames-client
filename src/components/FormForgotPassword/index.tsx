@@ -71,7 +71,7 @@ const FormForgotPassword = () => {
       {success ? (
         <FormSuccess>
           <CheckCircleOutline />
-          Your just received an e-mail!
+          You just received an e-mail!
         </FormSuccess>
       ) : (
         <>
