@@ -4,6 +4,7 @@ import { Provider as AuthProvider } from 'next-auth/client'
 import { ApolloProvider } from '@apollo/client'
 import { ThemeProvider } from 'styled-components'
 import { CartProvider } from 'hooks/use-cart'
+import { WishlistProvider } from 'hooks/use-wishlist'
 
 import { AppProps } from 'next/app'
 import Head from 'next/head'
@@ -11,7 +12,6 @@ import Head from 'next/head'
 import GlobalStyles from 'styles/global'
 import theme from 'styles/theme'
 import { useApollo } from 'utils/apollo'
-import { WishlistProvider } from 'hooks/use-wishlist'
 
 function App({ Component, pageProps }: AppProps) {
   const client = useApollo(pageProps.initialApolloState)
