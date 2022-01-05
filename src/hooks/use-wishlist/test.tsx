@@ -1,5 +1,4 @@
 import { MockedProvider } from '@apollo/client/testing'
-import { SettingsInputSvideoDimensions } from '@styled-icons/material-outlined/SettingsInputSvideo'
 import { renderHook } from '@testing-library/react-hooks'
 import { useWishlist, WishlistProvider } from '.'
 import { wishlistItems, wishlistMock } from './mock'
@@ -31,5 +30,24 @@ describe('useWishlist', () => {
       wishlistItems[0],
       wishlistItems[1]
     ])
+  })
+
+  it('should check if the game is in the wishlist', async () => {
+    const wrapper = ({ children }: { children: React.ReactNode }) => (
+      <MockedProvider mocks={[wishlistMock]}>
+        <WishlistProvider>{children}</WishlistProvider>
+      </MockedProvider>
+    )
+
+    const { result, waitForNextUpdate } = renderHook(() => useWishlist(), {
+      wrapper
+    })
+
+    // wait until get the data
+    await waitForNextUpdate()
+
+    expect(result.current.isInWishlist('1')).toBe(true)
+    expect(result.current.isInWishlist('2')).toBe(true)
+    expect(result.current.isInWishlist('3')).toBe(false)
   })
 })
