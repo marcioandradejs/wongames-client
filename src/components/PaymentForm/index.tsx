@@ -9,7 +9,7 @@ import Button from 'components/Button'
 
 import * as S from './styles'
 import { createPaymentIntent } from 'utils/stripe/methods'
-import { Session } from 'next-auth/client'
+import { Session } from 'next-auth'
 import { FormLoading } from 'components/Form'
 
 type PaymentFormProps = {
