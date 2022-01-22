@@ -4,16 +4,16 @@ import Highlight from '.'
 import * as S from './styles'
 
 const props = {
-  title: 'heading 1',
-  subtitle: 'heading 2',
+  title: 'Heading 1',
+  subtitle: 'Heading 2',
   backgroundImage: '/img/red-dead-img.jpg',
-  buttonLabel: 'buy now',
-  buttonLink: '/link2'
+  buttonLabel: 'Buy now',
+  buttonLink: '/rdr2'
 }
 
 describe('<Highlight />', () => {
   it('should render headings and button', () => {
-    render(<Highlight {...props} />)
+    const { container } = render(<Highlight {...props} />)
 
     expect(
       screen.getByRole('heading', { name: /heading 1/i })
@@ -24,14 +24,16 @@ describe('<Highlight />', () => {
     ).toBeInTheDocument()
 
     expect(screen.getByRole('link', { name: /buy now/i })).toBeInTheDocument()
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render background image', () => {
-    const { container } = render(<Highlight {...props} />)
+    render(<Highlight {...props} />)
 
-    expect(container.firstChild).toHaveStyle({
-      backgroundImage: `url(${props.backgroundImage})`
-    })
+    expect(
+      screen.getByRole('img', { name: `${props.title} background` })
+    ).toHaveAttribute('src', `${props.backgroundImage}`)
   })
 
   it('should render float image', () => {
