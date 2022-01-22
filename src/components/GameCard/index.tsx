@@ -1,12 +1,13 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 import Ribbon, { RibbonColors, RibbonSizes } from 'components/Ribbon'
 import CartButton from 'components/CartButton'
+import WishlistButton from 'components/WishlistButton'
 
 import formatPrice from 'utils/format-price'
 
 import * as S from './styles'
-import WishlistButton from 'components/WishlistButton'
 
 export type GameCardProps = {
   id: string
@@ -46,7 +47,7 @@ const GameCard = ({
     )}
     <Link href={`game/${slug}`} passHref>
       <S.ImageBox>
-        <img src={img} alt={title} />
+        <Image src={img} alt={title} layout="fill" object-fit="cover" />
       </S.ImageBox>
     </Link>
     <S.Content>
