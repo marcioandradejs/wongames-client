@@ -26,21 +26,24 @@ const settings: SliderSettings = {
       breakpoint: 1375,
       settings: {
         arrows: false,
-        slidesToShow: 3.2
+        slidesToShow: 3.2,
+        draggable: true
       }
     },
     {
       breakpoint: 1024,
       settings: {
         arrows: false,
-        slidesToShow: 2.2
+        slidesToShow: 2.2,
+        draggable: true
       }
     },
     {
       breakpoint: 768,
       settings: {
         arrows: false,
-        slidesToShow: 2.2
+        slidesToShow: 2.2,
+        draggable: true
       }
     }
   ]
