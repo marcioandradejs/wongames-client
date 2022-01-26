@@ -13,21 +13,23 @@ declare namespace Cypress {
      * @example cy.google()
      */
     google(): Chainable<Window>
-  }
 
-  interface Chainable {
+    /**
+     * Custom command to get element by data-cy values
+     * @example cy.getByDataCy('selector')
+     */
+    getByDataCy(selector: string ): Chainable<Element>
+
     /**
      * Custom command to check banner in page
      * @example cy.shouldRenderBanner()
      */
-     shouldRenderBanner(): Chainable<Element>
-  }
+    shouldRenderBanner(): Chainable<Element>
 
-  interface Chainable {
     /**
-     * Custom command to check showcase in page
+     * Custom command to check banner in page
      * @example cy.shouldRenderShowcase()
      */
-     shouldRenderShowcase(attrs: ShowcaseAttributes): Chainable<Element>
+    shouldRenderShowcase(attrs: ShowcaseAttributes): Chainable<Element>
   }
 }
