@@ -20,5 +20,25 @@ describe('Game Page', () => {
     })
 
     cy.getByDataCy('content').children().should('have.length.at.least', 2)
+
+    cy.getByDataCy('game-details').within(() => {
+      cy.findByRole("heading", {name: /game details/i}).should('exist')
+      cy.findByRole("heading", {name: /Developer/i}).should('exist')
+      cy.findByRole("heading", {name: /Release Date/i}).should('exist')
+      cy.findByRole("heading", {name: /Platforms/i}).should('exist')
+      cy.findByRole("heading", {name: /Publisher/i}).should('exist')
+      cy.findByRole("heading", {name: /Rating/i}).should('exist')
+      cy.findByRole("heading", {name: /Genres/i}).should('exist')
+
+      cy.findAllByText(/CD PROJEKT RED/i).should('have.length', 2)
+      cy.findByText(/Dec 8, 2020/i).should('exist')
+      cy.findByRole('img', {name: /windows/i}).should('exist')
+      cy.findByText(/free/i).should('exist')
+      cy.findByText('Action / Role-playing / Sci-fi').should('exist')
+    })
+
+    cy.shouldRenderShowcase({ name: "Upcoming Games", highlight: true })
+    cy.shouldRenderShowcase({ name: "You may like these games", highlight: false })
+
   })
 })
