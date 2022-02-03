@@ -42,5 +42,17 @@ declare namespace Cypress {
      * @example cy.shouldRenderShowcase()
      */
     shouldRenderShowcase(attrs: ShowcaseAttributes): Chainable<Element>
+
+    /**
+     * Custom command to check banner in page
+     * @example cy.shouldBeLessThan(100)
+     */
+     shouldBeLessThan(value: number): Chainable<Element>
+
+    /**
+     * Custom command to check banner in page
+     * @example cy.shouldBeGreaterThan(50)
+     */
+    shouldBeGreaterThan(value: number): Chainable<Element>
   }
 }
