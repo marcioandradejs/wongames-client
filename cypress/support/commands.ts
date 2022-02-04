@@ -77,19 +77,19 @@ Cypress.Commands.add('getFields', (fields) => {
 // shouldBeLessThan
 Cypress.Commands.add('shouldBeLessThan', (value) => {
   cy
-        .findByText(/^\$\d+(\. \d{1,2})?/)
-        .invoke('text')
-        .then($el => $el.replace('$', ''))
-        .then(parseFloat)
-        .should('be.lt', value)
+    .findByText(/^\$\d+(\.\d{1,2})?/)
+    .invoke('text')
+    .then($el => $el.replace('$', ''))
+    .then(parseFloat)
+    .should('be.lt', value)
 })
 
 // shouldBeGreaterThan
 Cypress.Commands.add('shouldBeGreaterThan', (value) => {
   cy
-        .findByText(/^\$\d+(\. \d{1,2})?/)
-        .invoke('text')
-        .then($el => $el.replace('$', ''))
-        .then(parseFloat)
-        .should('be.gt', value)
+    .findByText(/^\$\d+(\.\d{1,2})?/)
+    .invoke('text')
+    .then($el => $el.replace('$', ''))
+    .then(parseFloat)
+    .should('be.gt', value)
 })
