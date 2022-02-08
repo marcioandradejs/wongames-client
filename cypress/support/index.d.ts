@@ -38,10 +38,10 @@ declare namespace Cypress {
      signIn(email?: string, password?: string): Chainable<Element>
 
     /**
-     * Custom command to get element by data-cy values
+     * Custom command to get element by data-cy
      * @example cy.getByDataCy('selector')
      */
-    getByDataCy(selector: string ): Chainable<Element>
+    getByDataCy(selector: string): Chainable<Element>
 
     /**
      * Custom command to check banner in page
@@ -72,5 +72,17 @@ declare namespace Cypress {
      * @example cy.shouldBeGreaterThan(50)
      */
     shouldBeGreaterThan(value: number): Chainable<Element>
+
+    /**
+     * Custom command to add game to cart by index
+     * @example cy.addToCartByIndex(1)
+     */
+     addToCartByIndex(value: number): Chainable<Element>
+
+     /**
+      * Custom command to remove game from cart by index
+      * @example cy.removeFromCartByIndex(2)
+      */
+     removeFromCartByIndex(value: number): Chainable<Element>
   }
 }
