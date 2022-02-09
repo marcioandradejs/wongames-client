@@ -1,5 +1,6 @@
 import { Download } from '@styled-icons/boxicons-solid/Download'
 import { useCart } from 'hooks/use-cart'
+import Image from 'next/image'
 
 import * as S from './styles'
 
@@ -33,7 +34,7 @@ const GameItem = ({
     <S.Wrapper data-cy="game-item">
       <S.GameContent>
         <S.ImageBox>
-          <img src={img} alt={title} />
+          <Image src={img} alt={title} layout="fill" objectFit="cover" />
         </S.ImageBox>
         <S.Content>
           <S.Title>
@@ -63,7 +64,14 @@ const GameItem = ({
           <S.CardInfo>
             <span>{paymentInfo.number}</span>
             {!!paymentInfo.img && !!paymentInfo.flag && (
-              <img src={paymentInfo.img} alt={paymentInfo.flag} />
+              <S.ImageFlag>
+                <Image
+                  src={paymentInfo.img}
+                  alt={paymentInfo.flag}
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </S.ImageFlag>
             )}
           </S.CardInfo>
         </S.PaymentContent>

@@ -19,16 +19,11 @@ export const GameContent = styled.div`
 
 export const ImageBox = styled.div`
   ${({ theme }) => css`
+    position: relative;
     flex-shrink: 0;
     margin-right: 1.2rem;
     width: 9.6rem;
     height: ${theme.spacings.xxlarge};
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
 
     ${media.greaterThan('medium')`
       width: 15rem;
@@ -111,13 +106,21 @@ export const PaymentContent = styled.div`
 
 export const CardInfo = styled.div`
   ${({ theme }) => css`
+    position: relative;
     display: flex;
     align-items: center;
-    img {
-      margin-left: ${theme.spacings.xxsmall};
-    }
+
     ${media.lessThan('medium')`
       margin-top: ${theme.spacings.xsmall};
     `}
+  `}
+`
+
+export const ImageFlag = styled.div`
+  ${({ theme }) => css`
+    position: relative;
+    margin-left: ${theme.spacings.xxsmall};
+    width: 3.8rem;
+    height: 2.4rem;
   `}
 `
