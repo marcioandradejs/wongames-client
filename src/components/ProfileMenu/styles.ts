@@ -6,7 +6,7 @@ export const Nav = styled.nav`
     display: flex;
     border-bottom: 0.1rem solid ${theme.colors.lightGray};
 
-    ${media.greaterThan('medium')`
+    ${media.greaterThan('large')`
       flex-direction: column;
       border: 0;
 
@@ -53,7 +53,7 @@ export const Link = styled.a<LinkProps>`
       margin-left: ${theme.spacings.xsmall};
     }
 
-    ${media.lessThan('medium')`
+    ${media.lessThan('large')`
       justify-content: center;
       flex: 1;
 
